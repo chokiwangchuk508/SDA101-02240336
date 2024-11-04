@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage with TailwindCSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-red-600 text-white py-4 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Joen Joen Bhutan</h1>
+            <nav class="space-x-4">
+                <a href="#" class="hover:text-blue-200 transition duration-300">Home</a>
+                <a href="#" class="hover:text-blue-200 transition duration-300">About</a>
+                <a href="#" class="hover:text-blue-200 transition duration-300">Services</a>
+                <a href="#" class="hover:text-blue-200 transition duration-300">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-10">
+        <section class="text-center mb-10">
+            <h2 class="text-3xl font-bold mb-4">Welcome to Our Website</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-6">
+                We are delighted to have you here. Our services are top-notch, and we ensure the best experience for all our users. Feel free to explore!
+            </p>
+            <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transform hover:scale-105 transition duration-300">
+                Get Started
+            </button>
+        </section>
+
+        <!-- Responsive Grid -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl font-semibold mb-2">Service 1</h3>
+                <p class="text-gray-600">Experience the best of what we have to offer with our top-rated services.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl font-semibold mb-2">Service 2</h3>
+                <p class="text-gray-600">Get access to exclusive features and resources designed for you.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl font-semibold mb-2">Service 3</h3>
+                <p class="text-gray-600">Our team is ready to assist you with anything you need, anytime.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2024 Joen Joen Bhutan. All rights reserved.</p>
+            <div class="mt-2 space-x-4">
+                <a href="#" class="hover:text-gray-400 transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-400 transition duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

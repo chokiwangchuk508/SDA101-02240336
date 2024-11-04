@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 2rem;
+            line-height: 1.5;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        ol {
+            list-style-type: none;
+            counter-reset: event-counter;
+            padding-left: 0;
+        }
+        ol li {
+            counter-increment: event-counter;
+            background-color: #fff;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        ol li::before {
+            content: counter(event-counter) ". ";
+            font-weight: bold;
+            color: #007bff;
+            margin-right: 0.5rem;
+        }
+        li:hover {
+            background-color: #f0f8ff;
+            color: #007bff;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2>Upcoming College Events</h2>
+    <ol>
+        <li>
+            Tech Symposium
+            <ul>
+                <li>Time: March 15, 10:00 AM - 4:00 PM</li>
+                <li>Location: Main Auditorium</li>
+            </ul>
+        </li>
+        <li>
+            Career Fair
+            <ul>
+                <li>Time: April 10, 9:00 AM - 3:00 PM</li>
+                <li>Location: Auditorium</li>
+            </ul>
+        </li>
+        <li>
+            Cultural Fest
+            <ul>
+                <li>Time: May 5, 6:00 PM - 11:00 PM</li>
+                <li>Location: Near Prayer hall</li>
+            </ul>
+        </li>
+        <li>
+            Hackathon
+            <ul>
+                <li>Time: June 20-21, 9:00 AM - 9:00 PM</li>
+                <li>Location: Incubation Lab</li>
+            </ul>
+        </li>
+        <li>
+            Alumni Meet
+            <ul>
+                <li>Time: July 15, 5:00 PM - 9:00 PM</li>
+                <li>Location: Banquet Hall</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>

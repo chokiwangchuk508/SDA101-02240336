@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive TailwindCSS Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-blue-500 p-6 text-white">
+    <div class="container mx-auto">
+      <h1 class="text-2xl md:text-4xl font-bold">Welcome to My Responsive Page</h1>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-grow container mx-auto p-6">
+    <div class="text-center">
+      <h2 class="text-xl md:text-3xl font-semibold mb-4">A simple responsive layout</h2>
+      <p class="mb-8 text-gray-600">This webpage is styled with TailwindCSS and features a button with a micro interaction. Resize your screen to see the responsiveness in action.</p>
+      
+      <!-- Button with hover effect -->
+      <button class="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transform hover:scale-110 transition-all duration-300 ease-in-out">
+        Hover me!
+      </button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 p-6 text-center text-white">
+    <div class="container mx-auto">
+      <p class="text-sm">&copy; 2024 My Responsive Page. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

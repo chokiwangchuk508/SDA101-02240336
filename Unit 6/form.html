@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form with Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .error {
+            color: red;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+        <h2 class="text-2xl font-bold mb-4">Register</h2>
+        <form id="registrationForm">
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium">Username</label>
+                <input type="text" id="username" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                <p id="usernameError" class="error hidden"></p>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium">Email</label>
+                <input type="email" id="email" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                <p id="emailError" class="error hidden"></p>
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-medium">Password</label>
+                <input type="password" id="password" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                <p id="passwordError" class="error hidden"></p>
+            </div>
+            <div class="mb-4">
+                <label for="confirmPassword" class="block text-sm font-medium">Confirm Password</label>
+                <input type="password" id="confirmPassword" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                <p id="confirmPasswordError" class="error hidden"></p>
+            </div>
+            <button type="submit" id="submitBtn" class="bg-blue-600 text-white rounded-md px-4 py-2" disabled>Register</button>
+        </form>
+    </div>
+
+    <script>
+        const usernameInput = document.getElementById('username');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const submitBtn = document.getElementById('submitBtn');
+
+        usernameInput.addEventListener('input', validateUsername);
+        emailInput.addEventListener('input', validateEmail);
+        passwordInput.addEventListener('input', validatePassword);
+        confirmPasswordInput.addEventListener('input', validateConfirmPassword);
+
+        function validateUsername() {
+            const usernameError = document.getElementById('usernameError');
+            const username = usernameInput.value;
+            if (username.length < 3 || username.length > 20) {
+                usernameError.textContent = 'Username must be between 3 and 20 characters.';
+                usernameError.classList.remove('hidden');
+            } else {
+                usernameError.classList.add('hidden');
+            }
+            checkAllValid();
+        }
+
+        function validateEmail() {
+            const emailError = document.getElementById('emailError');
+            const email = emailInput.value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                emailError.classList.remove('hidden');
+            } else {
+                emailError.classList.add('hidden');
+            }
+            checkAllValid();
+        }
+
+        function validatePassword() {
+            const passwordError = document.getElementById('passwordError');
+            const password = passwordInput.value;
+            const strongPasswordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+            if (!strongPasswordPattern.test(password)) {
+                passwordError.textContent = 'Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.';
+                passwordError.classList.remove('hidden');
+            } else {
+                passwordError.classList.add('hidden');
+            }
+            validateConfirmPassword(); // Check if confirm password is valid
+            checkAllValid();
+        }
+
+        function validateConfirmPassword() {
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+            if (confirmPasswordInput.value !== passwordInput.value) {
+                confirmPasswordError.textContent = 'Passwords do not match.';
+                confirmPasswordError.classList.remove('hidden');
+            } else {
+                confirmPasswordError.classList.add('hidden');
+            }
+            checkAllValid();
+        }
+
+        function checkAllValid() {
+            const allValid = 
+                !document.getElementById('usernameError').classList.contains('hidden') &&
+                !document.getElementById('emailError').classList.contains('hidden') &&
+                !document.getElementById('passwordError').classList.contains('hidden') &&
+                !document.getElementById('confirmPasswordError').classList.contains('hidden');
+                
+            submitBtn.disabled = allValid; // Disable button if any field is invalid
+        }
+
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission for this demo
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>

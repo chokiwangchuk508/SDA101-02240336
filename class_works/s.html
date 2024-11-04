@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Example</title>
+    <style>
+        body {
+            height: 2000px; /* Just to create a scrollable area */
+            background: linear-gradient(to bottom, #f0f0f0, #ccc);
+        }
+        #showScroll {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div id="showScroll">0px</div>
+
+<script>
+    window.addEventListener('scroll', function() {
+        document.getElementById('showScroll').innerHTML = window.pageYOffset + 'px';
+    });
+</script>
+
+</body>
+</html>
